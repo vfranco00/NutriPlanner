@@ -1,7 +1,7 @@
 <body>
     <h1>NutriPlanner – Sistema de Cardápio Semanal Inteligente</h1>
     <p><strong>NutriPlanner</strong> é um sistema simples e funcional, desenvolvido em Python, com o objetivo de gerar cardápios semanais personalizados com base nas preferências alimentares do usuário. Ideal para quem quer manter uma alimentação organizada sem complicações.</p>
-    <hr>
+    <br>
     <h2>Funcionalidades Principais</h2>
     <ul>
         <li><strong>Cadastro e login de usuários</strong></li>
@@ -17,7 +17,7 @@
         <li><strong>Visualização do cardápio gerado</strong></li>
         <li><strong>Geração de uma lista de compras</strong> baseada nas refeições da semana</li>
     </ul>
-    <hr>
+    <br>
     <h2>Tecnologias Utilizadas</h2>
     <ul>
         <li><strong>Python 3.10+</strong></li>
@@ -26,24 +26,13 @@
         <li><strong>Persistência simples com arquivos .txt ou .json</strong> (em vez de banco de dados)</li>
         <li><strong>Unittest</strong> para testes automatizados (opcional)</li>
     </ul>
-    <hr>
+    <br>
     <h2>Estrutura de Pastas</h2>
     <p>Ainda está para decidir.</p>
-    <hr>
-    <h2>Como Executar o Projeto</h2>
-    <ol>
-        <li>Clone o repositório:
-            <pre>git clone https://github.com/seu-usuario/NutriPlanner.git</pre>
-        </li>
-        <li>Acesse a pasta e execute:
-            <pre>cd NutriPlanner/src
-            python main.py</pre>
-        </li>
-    </ol>
-    <hr>
+    <br>
     <h2>Autores</h2>
     <p>Desenvolvido por Luana Neres e Victor Caetano</p>
-    <hr>
+    <br>
     <h2>Especificação dos Requisitos</h2>
     <h3>Requisitos Funcionais</h3>
     <ul>
@@ -56,9 +45,9 @@
     </ul>
     <h3>Requisitos Não Funcionais</h3>
     <ul>
-        </li>
+        <li>Definição mediante andamento do projeto</li>
     </ul>
-    <hr>
+    <br>
     <h2>Modelo de Processos (Scrum)</h2>
     <h3>Sprint 1: Cadastro de Usuário e Preferências Alimentares</h3>
     <ul>
