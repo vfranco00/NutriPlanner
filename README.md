@@ -1,57 +1,118 @@
-# NutriPlanner
-Trabalho desenvolvido em Grupo para matéria de ESOF II - IFMG Ouro Branco
-
-**NutriPlanner** é um sistema simples e funcional, desenvolvido em Python, com o objetivo de gerar cardápios semanais personalizados com base nas preferências alimentares do usuário. Ideal para quem quer manter uma alimentação organizada sem complicações.
-
----
-
-## 🚀 Funcionalidades Principais
-
-- Cadastro e login de usuários
-- Escolha de preferências alimentares básicas:
-  - Vegano
-  - Vegetariano
-  - Sem lactose
-  - Sem glúten
-- Geração automática de um cardápio semanal (café, almoço e jantar)
-- Visualização do cardápio gerado
-- Geração de uma lista de compras baseada nas refeições da semana
-
----
-
-## 📌 Tecnologias Utilizadas
-
-- **Python 3.10+**
-- **Programação orientada a objetos**
-- **Interface via terminal (modo texto)**
-- **Persistência simples com arquivos `.txt`** (em vez de banco de dados)
-- (Opcional) **Unittest** para testes automatizados
-
----
-
-## 📦 Estrutura de Pastas
-
-- Ainda a definir escopo de pastas.
-
----
-
-## 🛠️ Como Executar o Projeto
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/NutriPlanner.git
-
----
-
-💡 Requisitos do Sistema
-Python 3.10 ou superior instalado
-
-Editor ou IDE (Visual Studio Code, PyCharm, etc)
-
-Sistema operacional Windows/Linux/MacOS
-
-📋 Licença
-Este projeto é de uso educacional e pode ser livremente modificado para fins de aprendizado.
-
-🤝 Autores
-Desenvolvido por Luana Aparecida
+<body>
+    <h1>NutriPlanner – Sistema de Cardápio Semanal Inteligente</h1>
+    <p><strong>NutriPlanner</strong> é um sistema simples e funcional, desenvolvido em Python, com o objetivo de gerar cardápios semanais personalizados com base nas preferências alimentares do usuário. Ideal para quem quer manter uma alimentação organizada sem complicações.</p>
+    <hr>
+    <h2>Funcionalidades Principais</h2>
+    <ul>
+        <li><strong>Cadastro e login de usuários</strong></li>
+        <li><strong>Escolha de preferências alimentares básicas:</strong>
+            <ul>
+                <li>Vegano</li>
+                <li>Vegetariano</li>
+                <li>Sem lactose</li>
+                <li>Sem glúten</li>
+            </ul>
+        </li>
+        <li><strong>Geração automática de um cardápio semanal</strong> (café, almoço e jantar)</li>
+        <li><strong>Visualização do cardápio gerado</strong></li>
+        <li><strong>Geração de uma lista de compras</strong> baseada nas refeições da semana</li>
+    </ul>
+    <hr>
+    <h2>Tecnologias Utilizadas</h2>
+    <ul>
+        <li><strong>Python 3.10+</strong></li>
+        <li><strong>Programação orientada a objetos</strong></li>
+        <li><strong>Interface via terminal (modo texto)</strong></li>
+        <li><strong>Persistência simples com arquivos .txt ou .json</strong> (em vez de banco de dados)</li>
+        <li><strong>Unittest</strong> para testes automatizados (opcional)</li>
+    </ul>
+    <hr>
+    <h2>Estrutura de Pastas</h2>
+    <p>Ainda está para decidir.</p>
+    <hr>
+    <h2>Como Executar o Projeto</h2>
+    <ol>
+        <li>Clone o repositório:
+            <pre>git clone https://github.com/seu-usuario/NutriPlanner.git</pre>
+        </li>
+        <li>Acesse a pasta e execute:
+            <pre>cd NutriPlanner/src
+            python main.py</pre>
+        </li>
+    </ol>
+    <hr>
+    <h2>Autores</h2>
+    <p>Desenvolvido por Luana Neres e Victor Caetano</p>
+    <hr>
+    <h2>Especificação dos Requisitos</h2>
+    <h3>Requisitos Funcionais</h3>
+    <ul>
+        <li><strong>RF01 – Cadastro e Login de Usuários</strong>: O sistema deve permitir que o usuário se cadastre fornecendo nome e senha. O usuário pode fazer login para acessar o sistema, baseado nas credenciais cadastradas.</li>
+        <li><strong>RF02 – Escolha de Preferências Alimentares</strong>: O sistema deve permitir ao usuário escolher suas preferências alimentares. Exemplo: Vegano, Vegetariano, Sem lactose, Sem glúten.</li>
+        <li><strong>RF03 – Banco de Receitas</strong>: O sistema deve ter um banco de receitas pré-definido (não precisa de cadastro de novas receitas). As receitas devem ser categorizadas por tags como "vegano", "sem lactose", etc.</li>
+        <li><strong>RF04 – Geração Automática de Cardápio</strong>: O sistema deve gerar automaticamente um cardápio semanal baseado nas preferências alimentares selecionadas. Cada dia da semana terá sugestões de café da manhã, almoço e jantar.</li>
+        <li><strong>RF05 – Visualização do Cardápio</strong>: O usuário deve poder visualizar o cardápio gerado para a semana.</li>
+        <li><strong>RF06 – Geração da Lista de Compras</strong>: O sistema deve gerar automaticamente uma lista de compras com base nas receitas do cardápio da semana. A lista de compras deve ser separada por categorias de itens (ex: hortifruti, laticínios, etc).</li>
+    </ul>
+    <h3>Requisitos Não Funcionais</h3>
+    <ul>
+        </li>
+    </ul>
+    <hr>
+    <h2>Modelo de Processos (Scrum)</h2>
+    <h3>Sprint 1: Cadastro de Usuário e Preferências Alimentares</h3>
+    <ul>
+        <li><strong>Objetivo:</strong> Criar a base do sistema, com a funcionalidade de cadastro e login do usuário.</li>
+        <li><strong>Tarefas:</strong>
+            <ul>
+                <li>Desenvolver a tela de login e cadastro.</li>
+                <li>Poderá registrar e fazer login.</li>
+                <li>Implementar o cadastro de preferências alimentares.</li>
+            </ul>
+        </li>
+    </ul>
+    <h3>Sprint 2: Banco de Receitas e Geração de Cardápio</h3>
+    <ul>
+        <li><strong>Objetivo:</strong> Implementar o banco de receitas e a geração do cardápio.</li>
+        <li><strong>Tarefas:</strong>
+            <ul>
+                <li>Criar o banco de dados simples de receitas (em arquivos).</li>
+                <li>Desenvolver a lógica para gerar o cardápio semanal com base nas preferências alimentares.</li>
+                <li>Exibir o cardápio na interface do usuário.</li>
+            </ul>
+        </li>
+    </ul>
+    <h3>Sprint 3: Geração da Lista de Compras e Melhoria de UI</h3>
+    <ul>
+        <li><strong>Objetivo:</strong> Gerar a lista de compras e melhorar a interação com o usuário.</li>
+        <li><strong>Tarefas:</strong>
+            <ul>
+                <li>Implementar a geração da lista de compras com base no cardápio.</li>
+                <li>Organizar os itens por categorias (hortifruti, laticínios, etc).</li>
+                <li>Melhorar a interface de visualização do cardápio e da lista de compras.</li>
+            </ul>
+        </li>
+    </ul>
+    <h3>Sprint 4: Testes e Polimento</h3>
+    <ul>
+        <li><strong>Objetivo:</strong> Garantir que o sistema esteja funcional e sem bugs.</li>
+        <li><strong>Tarefas:</strong>
+            <ul>
+                <li>Realizar testes de funcionalidade (cardápio gerado corretamente, lista de compras correta).</li>
+                <li>Corrigir erros de usabilidade.</li>
+                <li>Melhorar a performance de geração de cardápio.</li>
+            </ul>
+        </li>
+    </ul>
+    <h3>Sprint 5: Documentação e Entrega</h3>
+    <ul>
+        <li><strong>Objetivo:</strong> Documentar o sistema e prepará-lo para a entrega final.</li>
+        <li><strong>Tarefas:</strong>
+            <ul>
+                <li>Escrever a documentação do código e do funcionamento do sistema (README).</li>
+                <li>Finalizar qualquer detalhe que falta na interface ou no processo.</li>
+                <li>Entregar o sistema.</li>
+            </ul>
+        </li>
+    </ul>
+</body>
