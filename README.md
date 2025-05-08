@@ -18,15 +18,6 @@
         <li><strong>Geração de uma lista de compras</strong> baseada nas refeições da semana</li>
     </ul>
     <br>
-    <h2>Tecnologias Utilizadas</h2>
-    <ul>
-        <li><strong>Python 3.10+</strong></li>
-        <li><strong>Programação orientada a objetos</strong></li>
-        <li><strong>Interface via terminal (modo texto)</strong></li>
-        <li><strong>Persistência simples com arquivos .txt ou .json</strong> (em vez de banco de dados)</li>
-        <li><strong>Unittest</strong> para testes automatizados (opcional)</li>
-    </ul>
-    <br>
     <h2>Estrutura de Pastas</h2>
     <p>Ainda está para decidir.</p>
     <br>
