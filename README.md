@@ -1,6 +1,6 @@
 <body>
     <h1>NutriPlanner – Sistema de Cardápio Semanal Inteligente</h1>
-    <p><strong>NutriPlanner</strong> é um sistema simples e funcional, desenvolvido em Python, com o objetivo de gerar cardápios semanais personalizados com base nas preferências alimentares do usuário. Ideal para quem quer manter uma alimentação organizada sem complicações.</p>
+    <p><strong>NutriPlanner</strong> é um sistema simples e funcional, desenvolvido em Java, com o objetivo de gerar cardápios semanais personalizados com base nas preferências alimentares do usuário. Ideal para quem quer manter uma alimentação organizada sem complicações.</p>
     <br>
     <h2>Funcionalidades Principais</h2>
     <ul>
