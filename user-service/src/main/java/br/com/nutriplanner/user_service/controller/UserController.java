@@ -3,10 +3,14 @@ package br.com.nutriplanner.user_service.controller;
 import br.com.nutriplanner.user_service.dto.UserLoginDTO;
 import br.com.nutriplanner.user_service.dto.UserRegistrationDTO;
 import br.com.nutriplanner.user_service.dto.UserResponseDTO;
+import br.com.nutriplanner.user_service.model.User;
 import br.com.nutriplanner.user_service.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,5 +42,16 @@ public class UserController {
         }
         // Retorna 401 Unauthorized se as credenciais estiverem incorretas
         return ResponseEntity.status(401).body("Credenciais inválidas.");
+    }
+
+    @PutMapping("/{id}/preferencias")
+    public ResponseEntity<User> atualizarPreferencias(@PathVariable Long id, @RequestBody User dadosAtualizacao) {
+        return ResponseEntity.ok(service.atualizarPreferencias(id, dadosAtualizacao));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletarUsuario(@PathVariable Long id) {
+        service.deletarUsuario(id);
+        return ResponseEntity.noContent().build();
     }
 }
