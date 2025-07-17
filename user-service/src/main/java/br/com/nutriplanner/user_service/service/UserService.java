@@ -37,4 +37,24 @@ public class UserService {
                 .map(user -> user.getPassword().equals(dto.password()))
                 .orElse(false);
     }
+
+    public User atualizarPreferencias(Long id, User dadosAtualizacao) {
+        User usuario = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado!"));
+
+        // Atualiza apenas as preferências
+        usuario.setVegano(dadosAtualizacao.isVegano());
+        usuario.setVegano(dadosAtualizacao.isVegetariano());
+        usuario.setSemLactose(dadosAtualizacao.isSemLactose());
+        usuario.setSemGluten(dadosAtualizacao.isSemGluten());
+
+        return repository.save(usuario);
+    }
+
+    public void deletarUsuario(Long id) {
+        if (!repository.existsById(id)) {
+            throw new RuntimeException("Usuário não encontrado!");
+        }
+        repository.deleteById(id);
+    }
 }
