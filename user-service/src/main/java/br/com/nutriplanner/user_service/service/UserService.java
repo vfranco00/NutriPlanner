@@ -1,10 +1,13 @@
 package br.com.nutriplanner.user_service.service;
 
-import br.com.nutriplanner.user_service.dto.UserLoginDTO;
-import br.com.nutriplanner.user_service.dto.UserRegistrationDTO;
-import br.com.nutriplanner.user_service.dto.UserResponseDTO;
+//import br.com.nutriplanner.user_service.dto.UserLoginDTO;
+//import br.com.nutriplanner.user_service.dto.UserRegistrationDTO;
+//import br.com.nutriplanner.user_service.dto.UserResponseDTO;
 import br.com.nutriplanner.user_service.model.User;
 import br.com.nutriplanner.user_service.repository.UserRepository;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,25 +19,23 @@ public class UserService {
     private UserRepository repository;
 
     @Transactional
-    public UserResponseDTO registerUser(UserRegistrationDTO dto) {
-        if (repository.findByName(dto.name()).isPresent()) {
+    public User registerUser(User user) {
+        if (repository.findByName(user.getName()).isPresent()) {
             throw new RuntimeException("Erro: Nome de usuário já está em uso.");
         }
-
-        User newUser = new User();
-        newUser.setName(dto.name());
-        newUser.setPassword(dto.password());
-        newUser.setPreferences(dto.preferences());
-
-        User savedUser = repository.save(newUser);
-
-        return new UserResponseDTO(savedUser.getId(), savedUser.getName(), savedUser.getPreferences());
+        if (user.getName() == null || user.getName().isBlank()) {
+            throw new RuntimeException("Erro: Nome não pode ser vazio.");
+        }
+        if (user.getPassword() == null || user.getPassword().isBlank()) {
+            throw new RuntimeException("Erro: Senha não pode ser vazia.");
+        }
+        return repository.save(user);
     }
 
     @Transactional(readOnly = true)
-    public boolean login(UserLoginDTO dto) {
-        return repository.findByName(dto.name())
-                .map(user -> user.getPassword().equals(dto.password()))
+    public boolean login(User user) {
+        return repository.findByName(user.getName())
+                .map(u -> u.getPassword().equals(user.getPassword()))
                 .orElse(false);
     }
 
@@ -42,9 +43,8 @@ public class UserService {
         User usuario = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado!"));
 
-        // Atualiza apenas as preferências
         usuario.setVegano(dadosAtualizacao.isVegano());
-        usuario.setVegano(dadosAtualizacao.isVegetariano());
+        usuario.setVegetariano(dadosAtualizacao.isVegetariano());
         usuario.setSemLactose(dadosAtualizacao.isSemLactose());
         usuario.setSemGluten(dadosAtualizacao.isSemGluten());
 
@@ -59,7 +59,11 @@ public class UserService {
     }
 
     public User findUserByName(String username) {
-    return repository.findByName(username)
-            .orElseThrow(() -> new RuntimeException("Usuário não encontrado: " + username));
+        return repository.findByName(username)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado: " + username));
+    }
+
+    public List<User> listarTodosUsuarios() {
+        return repository.findAll();
     }
 }
