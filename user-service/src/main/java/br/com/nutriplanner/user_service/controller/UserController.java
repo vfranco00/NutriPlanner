@@ -1,8 +1,5 @@
 package br.com.nutriplanner.user_service.controller;
 
-import br.com.nutriplanner.user_service.dto.UserLoginDTO;
-import br.com.nutriplanner.user_service.dto.UserRegistrationDTO;
-import br.com.nutriplanner.user_service.dto.UserResponseDTO;
 import br.com.nutriplanner.user_service.model.User;
 import br.com.nutriplanner.user_service.service.UserService;
 
