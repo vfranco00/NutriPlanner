@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.Set;
 
+import org.bouncycastle.pqc.jcajce.provider.lms.LMSSignatureSpi.generic;
+
 @Entity
 @Table(name = "tb_user")
 @Data 
@@ -15,66 +17,78 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
     private String name;
-
-    @Column(nullable = false)
     private String password;
 
     @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "user_preferences", joinColumns = @JoinColumn(name = "user_id"))
-    @Column(name = "preference", nullable = false)
     private Set<String> preferences;
 
+    private boolean vegano;
+    private boolean vegetariano;
+    private boolean semLactose;
+    private boolean semGluten;  
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Set<String> getPreferences() {
+        return preferences;
+    }
+
+    public void setPreferences(Set<String> preferences) {
+        this.preferences = preferences;
+    }
+
     public boolean isVegano() {
-    return preferences != null && preferences.contains("vegano");
-}
-
-public boolean isVegetariano() {
-    return preferences != null && preferences.contains("vegetariano");
-}
-
-public boolean isSemLactose() {
-    return preferences != null && preferences.contains("sem_lactose");
-}
-
-public boolean isSemGluten() {
-    return preferences != null && preferences.contains("sem_gluten");
-}
-
-public void setVegano(boolean vegano) {
-    if (vegano) {
-        preferences.add("vegano");
-    } else {
-        preferences.remove("vegano");
+        return vegano;
     }
-    throw new UnsupportedOperationException("Unimplemented method 'setVegano'");
-}
 
-public void setSemLactose(boolean semLactose) {
-    if (semLactose) {
-        preferences.add("sem_lactose");
-    } else {
-        preferences.remove("sem_lactose");
+    public void setVegano(boolean vegano) {
+        this.vegano = vegano;
     }
-    throw new UnsupportedOperationException("Unimplemented method 'setSemLactose'");
-}
 
-public void setSemGluten(boolean semGluten) {
-    if (semGluten) {
-        preferences.add("sem_gluten");
-    } else {
-        preferences.remove("sem_gluten");
+    public boolean isVegetariano() {
+        return vegetariano;
     }
-    throw new UnsupportedOperationException("Unimplemented method 'setSemGluten'");
-}
 
-public void setVegetariano(boolean vegetariano) {
-    if (vegetariano) {
-        preferences.add("vegetariano");
-    } else {
-        preferences.remove("vegetariano");
+    public void setVegetariano(boolean vegetariano) {
+        this.vegetariano = vegetariano;
     }
-    throw new UnsupportedOperationException("Unimplemented method 'setVegetariano'");
-}
+
+    public boolean isSemLactose() {
+        return semLactose;
+    }
+
+    public void setSemLactose(boolean semLactose) {
+        this.semLactose = semLactose;
+    }
+
+    public boolean isSemGluten() {
+        return semGluten;
+    }
+
+    public void setSemGluten(boolean semGluten) {
+        this.semGluten = semGluten;
+    }
 }

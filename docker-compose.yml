@@ -56,7 +56,7 @@ services:
       - SPRING_DATASOURCE_PASSWORD=password
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
   db:
-    image: postgres:15-alpine
+    image: postgres:15
     container_name: postgres-db
     environment:
       - POSTGRES_USER=postgres
